@@ -148,12 +148,37 @@ main {
 
 @media (max-width:900px) {
     main {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .hero .id {
-        grid-template-columns: auto 1fr;
+        grid-template-columns: 72px 1fr auto;
+        gap: 12px;
+        align-items: center;
     }
+
+    .actions { display: flex; gap: 8px; align-items: center; }
+    .actions .btn-download { padding: 10px 14px; font-size: 14px }
+    .avatar { width: 72px; height: 72px; font-size: 22px }
+
+    .sidebar section { padding: 20px }
+    .main-col .card { padding: 14px }
+}
+
+/* Pequeñas pantallas: mejorar legibilidad y apilamiento */
+@media (max-width:480px) {
+    .container { padding: 0 12px; margin: 18px auto }
+    .hero .id { grid-template-columns: 56px 1fr; padding: 14px }
+    .avatar { width: 56px; height: 56px; font-size: 18px }
+
+    .actions { display: flex; flex-direction: column; align-items: stretch; gap: 8px }
+    .actions .btn-download, .actions .theme-toggle { width: 100%; text-align: center }
+
+    .chips span { display: inline-block; max-width: 48%; box-sizing: border-box }
+    .chips { display:flex; flex-wrap:wrap }
+
+    main { grid-template-columns: 1fr; gap: 12px }
 }
 
 .sidebar section {
