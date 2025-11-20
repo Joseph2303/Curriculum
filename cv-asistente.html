@@ -258,7 +258,7 @@
 
     <a
       href="menu.html"
-      id="backToMenu"
+      id="backToMenuMobile"
       class="fab fab--back"
       aria-label="Volver al menú"
       role="button"
@@ -278,6 +278,15 @@
               try{ e.preventDefault(); localStorage.removeItem('cv-choice'); }catch(err){}
               try{ window.location.href = 'menu.html'; }catch(err){}
             });
+        }catch(e){}
+
+        // Mobile floating back button handler
+        try{
+          const backMobile = document.getElementById('backToMenuMobile');
+          backMobile?.addEventListener('click', function(e){
+            try{ e.preventDefault(); localStorage.removeItem('cv-choice'); }catch(err){}
+            try{ window.location.href = 'menu.html'; }catch(err){}
+          });
         }catch(e){}
 
         const toggle = document.getElementById('toggleTheme');

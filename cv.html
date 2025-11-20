@@ -243,6 +243,15 @@
             });
         }catch(e){}
 
+        // Mobile floating back button handler
+        try{
+          const backMobile = document.getElementById('backToMenuMobile');
+          backMobile?.addEventListener('click', function(e){
+            try{ e.preventDefault(); localStorage.removeItem('cv-choice'); }catch(err){}
+            try{ window.location.href = 'menu.html'; }catch(err){}
+          });
+        }catch(e){}
+
         const toggle = document.getElementById('toggleTheme');
         const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         const storageKey = 'cv-dark';
