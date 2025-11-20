@@ -492,15 +492,15 @@
 
       const btnEng = document.getElementById('openEngineer');
       const btnAs = document.getElementById('openAssistant');
-      const storageKey = 'cv-choice';
+      const choiceKey = 'cv-choice';
 
       function goEngineer(){
-        try{ localStorage.setItem(storageKey, 'engineer'); }catch(e){}
+        try{ localStorage.setItem(choiceKey, 'engineer'); }catch(e){}
         window.location.href = 'cv.html';
       }
 
       function goAssistant(){
-        try{ localStorage.setItem(storageKey, 'assistant'); }catch(e){}
+        try{ localStorage.setItem(choiceKey, 'assistant'); }catch(e){}
         window.location.href = 'cv-asistente.html';
       }
 
@@ -509,7 +509,7 @@
 
       // Redirección automática si ya hay una elección guardada
       try{
-        const prev = localStorage.getItem(storageKey);
+        const prev = localStorage.getItem(choiceKey);
         if(prev === 'engineer') window.location.href = 'cv.html';
         if(prev === 'assistant') window.location.href = 'cv-asistente.html';
       }catch(e){}
