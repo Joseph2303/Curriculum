@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bienvenida — CV de Joseph Sebastián Álvarez Ruiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/cv.png" type="image/png">
+<style>
+  :root{
+    --primary:#2563eb;
+    --primary-soft:#e0ebff;
+    --bg1:#eff3ff;
+    --bg2:#f9fafb;
+    --text-main:#0f172a;
+    --text-muted:#6b7280;
+    --border:#e5e7eb;
+    --radius-lg:22px;
+    --radius-md:14px;
+    --shadow-soft:0 20px 55px rgba(15,23,42,0.12);
+    --transition:160ms ease-out;
+  }
+
+  *{
+    box-sizing:border-box;
+  }
+
+  body{
+    margin:0;
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:radial-gradient(circle at top, var(--bg1), var(--bg2) 55%);
+    color:var(--text-main);
+  }
+
+  .menu-wrap{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:34px;
+  }
+
+  .menu-box{
+    background:#fff;
+    max-width:980px;
+    width:100%;
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-soft);
+    border:1px solid rgba(148,163,184,0.25);
+    padding:40px 38px 32px;
+    display:grid;
+    grid-template-columns:1.15fr 1.4fr;
+    gap:26px;
+  }
+
+  /* ----------- TABLET / PHONE ---------- */
+  @media (max-width:768px){
+    body{
+      background:linear-gradient(to bottom, var(--bg1), var(--bg2));
+    }
+
+    .menu-wrap{
+      padding:18px 12px;
+    }
+
+    .menu-box{
+      grid-template-columns:1fr;
+      padding:20px 16px 16px;
+      gap:14px;
+      border-radius:18px;
+    }
+
+    .menu-left{
+      border-right:none;
+      border-bottom:1px solid rgba(226,232,240,0.9);
+      padding-right:0;
+      padding-bottom:10px;
+      margin-bottom:6px;
+      text-align:center;          /* CENTRAR TEXTOS EN MÓVIL */
+    }
+
+    .title{
+      font-size:1.2rem;
+      line-height:1.25;
+    }
+
+    .subtitle{
+      font-size:0.9rem;
+      line-height:1.6;
+      margin-top:6px;
+    }
+
+    .name-pill{
+      margin-top:14px;
+      justify-content:center;     /* CENTRAR PILL CON NOMBRE */
+      width:100%;
+      max-width:260px;
+    }
+
+    .menu-right{
+      gap:14px;
+    }
+
+    .cv-card{
+      padding:14px 12px;
+      gap:6px;
+    }
+
+    .cv-title{
+      font-size:0.98rem;
+    }
+
+    .cv-text{
+      font-size:0.82rem;
+    }
+
+    .cv-header{
+      align-items:flex-start;
+    }
+
+    .cv-actions{
+      margin-top:8px;
+      justify-content:stretch;    /* QUE LOS BOTONES USEN EL ANCHO */
+    }
+
+    .menu-btn{
+      padding:9px 12px;
+      font-size:0.82rem;
+      width:100%;                 /* BOTONES FULL WIDTH EN MÓVIL */
+      justify-content:center;
+    }
+
+    .menu-btn span.icon{
+      font-size:0.95rem;
+    }
+  }
+
+  /* Columna izquierda */
+  .menu-left{
+    border-right:1px solid rgba(226,232,240,0.9);
+    padding-right:26px;
+  }
+
+  /* Textos más grandes */
+  .kicker{
+    font-size:0.9rem;
+    letter-spacing:0.09em;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin:0 0 6px;
+  }
+
+  .title{
+    margin:0 0 12px;
+    font-size:1.75rem;
+    font-weight:700;
+  }
+
+  .subtitle{
+    margin:0;
+    font-size:1.05rem;
+    color:var(--text-muted);
+    line-height:1.7;
+  }
+
+  .name-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:18px;
+    padding:7px 16px;
+    border-radius:999px;
+    background:var(--primary-soft);
+    color:#1d4ed8;
+    font-size:0.9rem;
+    font-weight:500;
+  }
+
+  .avatar{
+    width:30px;
+    height:30px;
+    border-radius:999px;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#e5edff;
+    font-size:0.9rem;
+    font-weight:600;
+  }
+
+  /* ----------- DERECHA ----------- */
+  .menu-right{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+
+  .cv-card{
+    border-radius:var(--radius-md);
+    border:1px solid var(--border);
+    background:#f9fafb;
+    padding:18px 16px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    transition:
+      background-color var(--transition),
+      box-shadow var(--transition),
+      border-color var(--transition),
+      transform var(--transition);
+  }
+
+  .cv-card--primary{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    border-color:rgba(15,23,42,0.12);
+    color:#e5edff;
+  }
+
+  .cv-card--primary .cv-title{
+    color:#eff6ff;
+  }
+  .cv-card--primary .cv-text{
+    color:#dbeafe;
+  }
+  .cv-card--primary .cv-badge{
+    background:rgba(15,23,42,0.25);
+    color:#e5edff;
+  }
+
+  .cv-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 40px rgba(15,23,42,0.12);
+    border-color:rgba(37,99,235,0.35);
+    background:#ffffff;
+  }
+
+  .cv-card--primary:hover{
+    background:linear-gradient(135deg,#1d4ed8,#0b5fff);
+    border-color:rgba(15,23,42,0.22);
+  }
+
+  .cv-header{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    align-items:flex-start;
+  }
+
+  .cv-title{
+    margin:0;
+    font-size:1.15rem;
+    font-weight:650;
+    color:var(--text-main);
+  }
+
+  .cv-badge{
+    font-size:0.82rem;
+    padding:4px 10px;
+    border-radius:999px;
+    background:rgba(15,23,42,0.04);
+    color:var(--text-muted);
+    white-space:nowrap;
+  }
+
+  .cv-text{
+    margin:4px 0 0;
+    font-size:0.95rem;
+    color:var(--text-muted);
+    line-height:1.55;
+  }
+
+  .cv-actions{
+    margin-top:10px;
+    display:flex;
+    justify-content:flex-end;
+  }
+
+  .menu-btn{
+    padding:10px 18px;
+    border-radius:999px;
+    border:1px solid transparent;
+    font-size:0.95rem;
+    font-weight:600;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    transition:
+      background-color var(--transition),
+      color var(--transition),
+      border-color var(--transition),
+      box-shadow var(--transition),
+      transform var(--transition);
+    white-space:nowrap;
+  }
+
+  .menu-btn.primary{
+    background:#ffffff;
+    color:#1d4ed8;
+    border-color:rgba(191,219,254,0.85);
+    box-shadow:0 10px 22px rgba(15,23,42,0.32);
+  }
+
+  .menu-btn.primary:hover{
+    background:#e0ebff;
+    transform:translateY(-1px);
+  }
+
+  .menu-btn.secondary{
+    background:#e0ebff;
+    color:#1d4ed8;
+    border-color:#c7d2fe;
+    box-shadow:0 8px 18px rgba(148,163,184,0.35);
+  }
+
+  .menu-btn.secondary:hover{
+    background:#d0dfff;
+    transform:translateY(-1px);
+  }
+
+  .menu-btn span.icon{
+    font-size:1.1rem;
+    line-height:1;
+  }
+  
+  /* Dark mode overrides for the menu view */
+  html.dark body{
+    background: radial-gradient(circle at top, #081226, #071021 55%);
+    color: #e6eef8;
+  }
+
+  html.dark .menu-box{
+    background: #071428;
+    border-color: rgba(255,255,255,0.04);
+    box-shadow: 0 14px 40px rgba(2,6,23,0.6);
+  }
+
+  html.dark .menu-left{
+    color: #cfe6ff;
+  }
+
+  html.dark .subtitle, html.dark .cv-text{
+    color: #cbd5e1;
+  }
+
+  html.dark .name-pill{
+    background: rgba(255,255,255,0.03);
+    color: #dbeafe;
+  }
+
+  html.dark .avatar{
+    background: linear-gradient(135deg,#0b5fff,#4f46e5);
+    color: #eaf2ff;
+  }
+
+  html.dark .cv-card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-color: rgba(255,255,255,0.04);
+    color: #e6eef8;
+  }
+
+  html.dark .cv-card--primary{
+    background: linear-gradient(135deg,#0b5fff,#1d4ed8);
+    color: #f0f7ff;
+  }
+
+  html.dark .cv-badge{
+    background: rgba(255,255,255,0.04);
+    color: #cfe6ff;
+  }
+
+  html.dark .menu-btn.primary{
+    background: rgba(255,255,255,0.06);
+    color: #e6f0ff;
+    border-color: rgba(255,255,255,0.04);
+    box-shadow: 0 8px 20px rgba(2,6,23,0.5);
+  }
+
+  html.dark .menu-btn.secondary{
+    background: rgba(255,255,255,0.03);
+    color: #cfe6ff;
+    border-color: rgba(255,255,255,0.03);
+  }
+</style>
+
+</head>
+<body>
+  <!-- Botón de cambio de tema fijo -->
+  <button id="toggleTheme" class="theme-toggle" aria-pressed="false" title="Cambiar tema" style="position:fixed;right:16px;top:16px;z-index:1200">
+    <span class="theme-icon">🌗</span>
+    <span class="theme-label">Tema</span>
+  </button>
+  <main class="menu-wrap">
+    <section class="menu-box" aria-labelledby="heading">
+      <!-- Columna izquierda: bienvenida -->
+      <div class="menu-left">
+        <p class="kicker">Bienvenida</p>
+        <center>
+        <h1 id="heading" class="title">GRACIAS POR INTERESARTE EN MI CURRICULUM</h1>
+        </center>
+        <p class="subtitle">
+            Soy <strong>Joseph Sebastián Álvarez Ruiz</strong>, profesional con experiencia en tecnologías de la información y gestión. Por favor, seleccione la versión del currículum que mejor se ajuste al puesto que está evaluando.
+        </p>
+        <div class="name-pill">
+          <div class="avatar">JS</div>
+          <span>Currículum actualizado — 2025</span>
+        </div>
+      </div>
+
+      <!-- Columna derecha: opciones de CV -->
+      <div class="menu-right">
+        <!-- CV Ingeniero -->
+        <article class="cv-card cv-card--primary">
+          <div class="cv-header">
+            <div>
+              <h2 class="cv-title">CV de Ingeniero en Sistemas de Información</h2>
+              <p class="cv-text">
+                Perfil orientado a desarrollo web, análisis de sistemas, proyectos tecnológicos
+                y soluciones de TI para organizaciones.
+              </p>
+            </div>
+            <span class="cv-badge">Perfil Ingeniero</span>
+          </div>
+          <br>
+          <div class="cv-actions">
+            <button id="openEngineer" class="menu-btn primary" type="button">
+              <span class="icon" aria-hidden="true">↗</span>
+              VER CURRICULUM
+            </button>
+          </div>
+        </article>
+
+        <!-- CV Asistente Administrativo -->
+        <article class="cv-card">
+          <div class="cv-header">
+            <div>
+              <h2 class="cv-title">CV de Asistente Administrativo</h2>
+              <p class="cv-text">
+                Perfil enfocado en gestión administrativa, servicio al cliente,
+                apoyo a coordinación y uso de herramientas tecnológicas.
+              </p>
+            </div>
+            <span class="cv-badge">Perfil administrativo</span>
+          </div>
+          <div class="cv-actions">
+            <button id="openAssistant" class="menu-btn secondary" type="button">
+              <span class="icon" aria-hidden="true">↗</span>
+              VER CURRICULUM
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      // Theme toggle for menu view
+      try{
+        const toggle = document.getElementById('toggleTheme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const storageKey = 'cv-dark';
+
+        function animateToggle(){
+          try{ toggle?.classList.add('theme-anim'); setTimeout(()=> toggle?.classList.remove('theme-anim'),700); }catch(e){}
+        }
+
+        function applyTheme(dark){
+          try{
+            if(dark) document.documentElement.classList.add('dark');
+            else document.documentElement.classList.remove('dark');
+            if(toggle) toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+            localStorage.setItem(storageKey, dark ? '1' : '0');
+            animateToggle();
+          }catch(e){}
+        }
+
+        const saved = localStorage.getItem(storageKey);
+        const darkInit = saved ? saved === '1' : prefersDark;
+        applyTheme(darkInit);
+
+        // set initial icon (only icon span)
+        try{ const icon = toggle?.querySelector('.theme-icon'); if(icon) icon.textContent = darkInit ? '🌙' : '☀️'; }catch(e){}
+
+        toggle?.addEventListener('click', function(){ const cur = document.documentElement.classList.contains('dark'); applyTheme(!cur); });
+      }catch(e){}
+
+      const btnEng = document.getElementById('openEngineer');
+      const btnAs = document.getElementById('openAssistant');
+      const storageKey = 'cv-choice';
+
+      function goEngineer(){
+        try{ localStorage.setItem(storageKey, 'engineer'); }catch(e){}
+        window.location.href = 'cv.html';
+      }
+
+      function goAssistant(){
+        try{ localStorage.setItem(storageKey, 'assistant'); }catch(e){}
+        window.location.href = 'cv-asistente.html';
+      }
+
+      btnEng?.addEventListener('click', goEngineer);
+      btnAs?.addEventListener('click', goAssistant);
+
+      // Redirección automática si ya hay una elección guardada
+      try{
+        const prev = localStorage.getItem(storageKey);
+        if(prev === 'engineer') window.location.href = 'cv.html';
+        if(prev === 'assistant') window.location.href = 'cv-asistente.html';
+      }catch(e){}
+    })();
+  </script>
+</body>
+</html>
