@@ -274,9 +274,10 @@
         // Botón para volver al menú: limpia la preferencia y navega
         try{
           const back = document.getElementById('backToMenu');
-          back?.addEventListener('click', function(){
-            try{ localStorage.removeItem('cv-choice'); }catch(e){}
-          });
+            back?.addEventListener('click', function(e){
+              try{ e.preventDefault(); localStorage.removeItem('cv-choice'); }catch(err){}
+              try{ window.location.href = 'menu.html'; }catch(err){}
+            });
         }catch(e){}
 
         const toggle = document.getElementById('toggleTheme');
