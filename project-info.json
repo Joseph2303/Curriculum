@@ -1,0 +1,93 @@
+{
+  "nombre": "Currículum de Joseph Sebastián Álvarez Ruiz",
+  "descripcion": "Aplicación React + Vite para portafolio de CVs interactivo",
+  "version": "2.0.0",
+  "tecnologias": {
+    "framework": "React 18.2",
+    "bundler": "Vite 5.0",
+    "routing": "React Router 6",
+    "estilos": "CSS Modules + Custom Properties",
+    "lenguaje": "JavaScript (JSX)"
+  },
+  "estructura": {
+    "src": {
+      "components": [
+        "Menu.jsx - Menú principal con selector de CV",
+        "CVEngineer.jsx - CV Ingeniero en Sistemas de Información",
+        "CVAssistant.jsx - CV Asistente Administrativo",
+        "ThemeToggle.jsx - Componente para cambio de tema"
+      ],
+      "hooks": [
+        "useTheme.js - Hook personalizado para gestión de tema"
+      ],
+      "styles": [
+        "menu.css - Estilos del menú",
+        "cv.css - Estilos de los CVs",
+        "index.css - Estilos globales"
+      ],
+      "archivos": [
+        "App.jsx - Componente raíz con rutas",
+        "main.jsx - Punto de entrada de la aplicación",
+        "App.css - Estilos del componente App"
+      ]
+    },
+    "public": {
+      "img": "Imágenes, logos e iconos",
+      "files": "PDFs para descargar"
+    }
+  },
+  "rutas": {
+    "/": "Menú principal",
+    "/cv-engineer": "CV Ingeniero en Sistemas de Información",
+    "/cv-assistant": "CV Asistente Administrativo"
+  },
+  "comandos": {
+    "dev": "npm run dev - Inicia servidor de desarrollo",
+    "build": "npm run build - Compila para producción",
+    "preview": "npm run preview - Previsualiza el build"
+  },
+  "caracteristicas": {
+    "navegacion": "SPA sin recargas de página",
+    "tema": "Oscuro/Claro con persistencia en localStorage",
+    "responsive": "Mobile First - Optimizado para todos los tamaños",
+    "accesibilidad": "ARIA labels, skip links, semantic HTML",
+    "impresion": "Estilos de print optimizados",
+    "performance": "Code splitting, lazy loading listo"
+  },
+  "navegadores_soportados": [
+    "Chrome/Edge 90+",
+    "Firefox 88+",
+    "Safari 14+",
+    "iOS Safari 14+",
+    "Android Browser 90+"
+  ],
+  "dependencias": [
+    "react@18.2.0 - Librería UI",
+    "react-dom@18.2.0 - Renderizado DOM",
+    "react-router-dom@6.20.0 - Enrutamiento"
+  ],
+  "devDependencies": [
+    "vite@5.0.8 - Bundler y dev server",
+    "@vitejs/plugin-react@4.2.1 - Plugin React para Vite"
+  ],
+  "localStorage": {
+    "cv-dark": "Preferencia de tema (0=claro, 1=oscuro)",
+    "cv-choice": "Última selección de CV"
+  },
+  "archivos_originales": {
+    "menu.html": "Convertido a Menu.jsx",
+    "cv.html": "Convertido a CVEngineer.jsx",
+    "cv-asistente.html": "Convertido a CVAssistant.jsx",
+    "styles.css": "Dividido en menu.css y cv.css"
+  },
+  "autor": "Joseph Sebastián Álvarez Ruiz",
+  "ubicacion": "San José, Costa Rica",
+  "contacto": {
+    "email": "jalvarezruiz3@gmail.com",
+    "whatsapp": "+506 8581 2663",
+    "github": "https://github.com/Joseph2303",
+    "linkedin": "https://www.linkedin.com/in/joseph-sebastian-álvarez-ruiz-bb6758187/"
+  },
+  "ultima_actualizacion": "2026-01-31",
+  "estado": "✅ Listo para producción"
+}
