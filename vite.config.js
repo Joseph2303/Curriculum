@@ -5,6 +5,7 @@ import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/',
   css: {
     postcss: {
       plugins: [
@@ -12,6 +13,15 @@ export default defineConfig({
         autoprefixer(),
       ],
     },
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
   server: {
     port: 5173,
