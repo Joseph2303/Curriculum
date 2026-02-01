@@ -2,9 +2,56 @@ import { useNavigate } from 'react-router-dom'
 import { FiDownload, FiArrowLeft } from 'react-icons/fi'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
+import { useImagePreload } from '../hooks/useImagePreload'
+
+// Lista de todas las imágenes a precargar
+const imageUrls = [
+  "/iconosInge/python_18894.png",
+  "/iconosInge/java_original_wordmark_logo_icon_146459.png",
+  "/iconosInge/javascript_icon_130900.png",
+  "/iconosInge/c_icon_132529.png",
+  "/iconosInge/php_icon_130857.png",
+  "/iconosInge/typescript_original_logo_icon_146317.png",
+  "/iconosInge/nodejs_original_wordmark_logo_icon_146412.png",
+  "/iconosInge/vuejs_original_wordmark_logo_icon_146305.png",
+  "/iconosInge/react_original_wordmark_logo_icon_146375.png",
+  "/iconosInge/bootstrap_plain_logo_icon_146619.png",
+  "/iconosInge/angular_logo_icon_169595.png",
+  "/iconosInge/logo_pure@2x.png",
+  "/iconosInge/foundation_original_wordmark_logo_icon_146520.png",
+  "/iconosInge/html_original_wordmark_logo_icon_146478.png",
+  "/iconosInge/css_original_wordmark_logo_icon_146576.png",
+  "/iconosInge/mysql_original_wordmark_logo_icon_146417.png",
+  "/iconosInge/mongodb_original_wordmark_logo_icon_146425.png",
+  "/iconosInge/dbs-sqlserver_icon-icons.com_50903.png",
+  "/iconosInge/sqlite_logo_icon_169724.png",
+  "/iconosInge/git_original_wordmark_logo_icon_146510.png",
+  "/iconosInge/github-logo_icon-icons.com_73546.png",
+  "/iconosInge/microsoft_visual_studio_code_alt_macos_bigsur_icon_189954.png",
+  "/iconosInge/codeoutlinedprogrammingsigns_81143.png",
+  "/iconosInge/microsoft_visual_studio_macos_bigsur_icon_189958.png",
+  "/iconosInge/intellij_macos_bigsur_icon_190061.png",
+  "/iconosInge/chatgpt_logo_chatgpt_logo_square_green_gpt_ia_openai_icon_264977.png",
+  "/iconosInge/microsoft_icon_130876.png",
+  "/iconosInge/claude-logo.webp",
+  "/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png",
+  "/iconosInge/scrum_backlog_process_project_management_agile_approache_dev_icon_261689.png",
+  "/iconosInge/web_development_trello_agile_kanban_icon_265401.png",
+  "/iconosInge/figma_logo_icon_147289.png",
+  "/iconosInge/jira_logo_icon_147274.png",
+  "/iconosInge/azure_devops_logo_icon_145466.png",
+  "/iconosInge/4202106excellogomicrosoftms-115582_115719.png",
+  "/iconosInge/office365_icon-icons.com_61639.png",
+  "/iconosInge/4202011emailgmaillogomailsocialsocialmedia-115677_115624.png",
+  "/iconosInge/OneDrive_23654.png",
+  "/iconosInge/4201991drivegooglegoogledrivelogosocialsocialmedia-115718_115583.png",
+  "/iconosInge/dropbox_tile_logo_icon_168230.png",
+  "/iconosInge/pdf_filetype_icon_177525.png",
+]
 
 export const CVEngineer = () => {
   const navigate = useNavigate()
+  const imagesLoaded = useImagePreload(imageUrls)
 
   const handleBackToMenu = () => {
     try {
@@ -307,6 +354,7 @@ const SkillItem = ({ src, label }) => (
     <img 
       src={src} 
       alt={label} 
+      loading="eager"
       className="w-14 h-14 object-contain rounded-lg bg-teal-50 dark:bg-gray-700 p-2 transition-colors hover:bg-teal-100 dark:hover:bg-teal-600"
     />
     <span className="text-xs font-medium text-gray-600 dark:text-gray-400 max-w-[80px]">{label}</span>
