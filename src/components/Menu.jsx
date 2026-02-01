@@ -1,9 +1,23 @@
 import { useNavigate } from 'react-router-dom'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
+import { useImagePreload } from '../hooks/useImagePreload'
+
+// Precargar imágenes críticas del CV Engineer
+const engineerImages = [
+  "/iconosInge/python_18894.png",
+  "/iconosInge/java_original_wordmark_logo_icon_146459.png",
+  "/iconosInge/javascript_icon_130900.png",
+  "/iconosInge/react_original_wordmark_logo_icon_146375.png",
+  "/iconosInge/nodejs_original_wordmark_logo_icon_146412.png",
+  "/iconosInge/mysql_original_wordmark_logo_icon_146417.png",
+]
 
 export const Menu = () => {
   const navigate = useNavigate()
+  
+  // Precargar imágenes en el menú
+  useImagePreload(engineerImages)
 
   const go = (choice, route) => {
     try {
