@@ -136,74 +136,74 @@ export const CVEngineer = () => {
             <Card title="Habilidades Técnicas">
               <div className="space-y-6">
                 <SkillGroup title="Lenguajes de Programación" skills={[
-                  { src: "img/iconosInge/python_18894.png", label: "Python" },
-                  { src: "img/iconosInge/java_original_wordmark_logo_icon_146459.png", label: "Java" },
-                  { src: "img/iconosInge/javascript_icon_130900.png", label: "JavaScript" },
-                  { src: "img/iconosInge/c_icon_132529.png", label: "C++" },
-                  { src: "img/iconosInge/php_icon_130857.png", label: "PHP" },
-                  { src: "img/iconosInge/typescript_original_logo_icon_146317.png", label: "TypeScript" },
+                  { src: "/iconosInge/python_18894.png", label: "Python" },
+                  { src: "/iconosInge/java_original_wordmark_logo_icon_146459.png", label: "Java" },
+                  { src: "/iconosInge/javascript_icon_130900.png", label: "JavaScript" },
+                  { src: "/iconosInge/c_icon_132529.png", label: "C++" },
+                  { src: "/iconosInge/php_icon_130857.png", label: "PHP" },
+                  { src: "/iconosInge/typescript_original_logo_icon_146317.png", label: "TypeScript" },
                 ]} />
 
                 <SkillGroup title="Frameworks y Librerías" skills={[
-                  { src: "img/iconosInge/nodejs_original_wordmark_logo_icon_146412.png", label: "Node.js" },
-                  { src: "img/iconosInge/vuejs_original_wordmark_logo_icon_146305.png", label: "Vue.js" },
-                  { src: "img/iconosInge/react_original_wordmark_logo_icon_146375.png", label: "React" },
-                  { src: "img/iconosInge/bootstrap_plain_logo_icon_146619.png", label: "Bootstrap" },
-                  { src: "img/iconosInge/angular_logo_icon_169595.png", label: "Angular" },
-                  { src: "img/iconosInge/logo_pure@2x.png", label: "Pure.CSS" },
-                  { src: "img/iconosInge/foundation_original_wordmark_logo_icon_146520.png", label: "Foundation" },
-                  { src: "img/iconosInge/html_original_wordmark_logo_icon_146478.png", label: "HTML" },
-                  { src: "img/iconosInge/css_original_wordmark_logo_icon_146576.png", label: "CSS" },
+                  { src: "/iconosInge/nodejs_original_wordmark_logo_icon_146412.png", label: "Node.js" },
+                  { src: "/iconosInge/vuejs_original_wordmark_logo_icon_146305.png", label: "Vue.js" },
+                  { src: "/iconosInge/react_original_wordmark_logo_icon_146375.png", label: "React" },
+                  { src: "/iconosInge/bootstrap_plain_logo_icon_146619.png", label: "Bootstrap" },
+                  { src: "/iconosInge/angular_logo_icon_169595.png", label: "Angular" },
+                  { src: "/iconosInge/logo_pure@2x.png", label: "Pure.CSS" },
+                  { src: "/iconosInge/foundation_original_wordmark_logo_icon_146520.png", label: "Foundation" },
+                  { src: "/iconosInge/html_original_wordmark_logo_icon_146478.png", label: "HTML" },
+                  { src: "/iconosInge/css_original_wordmark_logo_icon_146576.png", label: "CSS" },
                 ]} />
 
                 <SkillGroup title="Bases de Datos" skills={[
-                  { src: "img/iconosInge/mysql_original_wordmark_logo_icon_146417.png", label: "MySQL" },
-                  { src: "img/iconosInge/mongodb_original_wordmark_logo_icon_146425.png", label: "MongoDB" },
-                  { src: "img/iconosInge/dbs-sqlserver_icon-icons.com_50903.png", label: "SQL Server" },
-                  { src: "img/iconosInge/sqlite_logo_icon_169724.png", label: "SQLite" },
+                  { src: "/iconosInge/mysql_original_wordmark_logo_icon_146417.png", label: "MySQL" },
+                  { src: "/iconosInge/mongodb_original_wordmark_logo_icon_146425.png", label: "MongoDB" },
+                  { src: "/iconosInge/dbs-sqlserver_icon-icons.com_50903.png", label: "SQL Server" },
+                  { src: "/iconosInge/sqlite_logo_icon_169724.png", label: "SQLite" },
                 ]} />
 
                 <SkillGroup title="Control de Versiones" skills={[
-                  { src: "img/iconosInge/git_original_wordmark_logo_icon_146510.png", label: "Git" },
-                  { src: "img/iconosInge/github-logo_icon-icons.com_73546.png", label: "GitHub" },
+                  { src: "/iconosInge/git_original_wordmark_logo_icon_146510.png", label: "Git" },
+                  { src: "/iconosInge/github-logo_icon-icons.com_73546.png", label: "GitHub" },
                 ]} />
 
                 <SkillGroup title="Herramientas de Desarrollo" skills={[
-                  { src: "img/iconosInge/microsoft_visual_studio_code_alt_macos_bigsur_icon_189954.png", label: "VS Code" },
-                  { src: "img/iconosInge/codeoutlinedprogrammingsigns_81143.png", label: "ZinjaI" },
-                  { src: "img/iconosInge/microsoft_visual_studio_macos_bigsur_icon_189958.png", label: "Visual Studio" },
-                  { src: "img/iconosInge/intellij_macos_bigsur_icon_190061.png", label: "IntelliJ" },
+                  { src: "/iconosInge/microsoft_visual_studio_code_alt_macos_bigsur_icon_189954.png", label: "VS Code" },
+                  { src: "/iconosInge/codeoutlinedprogrammingsigns_81143.png", label: "ZinjaI" },
+                  { src: "/iconosInge/microsoft_visual_studio_macos_bigsur_icon_189958.png", label: "Visual Studio" },
+                  { src: "/iconosInge/intellij_macos_bigsur_icon_190061.png", label: "IntelliJ" },
                 ]} />
 
                 <SkillGroup title="IA Generativa y Herramientas Asistidas por IA" skills={[
-                  { src: "img/iconosInge/chatgpt_logo_chatgpt_logo_square_green_gpt_ia_openai_icon_264977.png", label: "ChatGPT" },
-                  { src: "img/iconosInge/microsoft_icon_130876.png", label: "Copilot" },
-                  { src: "img/iconosInge/claude-logo.webp", label: "Claude" },
-                  { src: "img/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "Monica" },
-                  { src: "img/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "Midjourney" },
-                  { src: "img/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "DALL-E" },
-                  { src: "img/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "Tome" },
-                  { src: "img/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "Gamma" },
-                  { src: "img/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "V0" },
-                  { src: "img/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "Blackbox" },
+                  { src: "/iconosInge/chatgpt_logo_chatgpt_logo_square_green_gpt_ia_openai_icon_264977.png", label: "ChatGPT" },
+                  { src: "/iconosInge/microsoft_icon_130876.png", label: "Copilot" },
+                  { src: "/iconosInge/claude-logo.webp", label: "Claude" },
+                  { src: "/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "Monica" },
+                  { src: "/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "Midjourney" },
+                  { src: "/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "DALL-E" },
+                  { src: "/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "Tome" },
+                  { src: "/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "Gamma" },
+                  { src: "/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "V0" },
+                  { src: "/iconosInge/ia_writer_dark_macos_bigsur_icon_189510.png", label: "Blackbox" },
                 ]} />
 
                 <SkillGroup title="Metodologías de Desarrollo" skills={[
-                  { src: "img/iconosInge/scrum_backlog_process_project_management_agile_approache_dev_icon_261689.png", label: "Scrum" },
-                  { src: "img/iconosInge/web_development_trello_agile_kanban_icon_265401.png", label: "Kanban" },
+                  { src: "/iconosInge/scrum_backlog_process_project_management_agile_approache_dev_icon_261689.png", label: "Scrum" },
+                  { src: "/iconosInge/web_development_trello_agile_kanban_icon_265401.png", label: "Kanban" },
                 ]} />
 
                 <SkillGroup title="Herramientas de Colaboración y Gestión" skills={[
-                  { src: "img/iconosInge/figma_logo_icon_147289.png", label: "Figma" },
-                  { src: "img/iconosInge/jira_logo_icon_147274.png", label: "Jira" },
-                  { src: "img/iconosInge/azure_devops_logo_icon_145466.png", label: "Azure DevOps" },
-                  { src: "img/iconosInge/microsoft_icon_130876.png", label: "Loop" },
+                  { src: "/iconosInge/figma_logo_icon_147289.png", label: "Figma" },
+                  { src: "/iconosInge/jira_logo_icon_147274.png", label: "Jira" },
+                  { src: "/iconosInge/azure_devops_logo_icon_145466.png", label: "Azure DevOps" },
+                  { src: "/iconosInge/microsoft_icon_130876.png", label: "Loop" },
                 ]} />
 
                 <SkillGroup title="Conocimientos Informáticos" skills={[
-                  { src: "img/iconosInge/4202106excellogomicrosoftms-115582_115719.png", label: "Excel" },
-                  { src: "img/iconosInge/office365_icon-icons.com_61639.png", label: "Office" },
-                  { src: "img/iconosInge/4202011emailgmaillogomailsocialsocialmedia-115677_115624.png", label: "Email" },
+                  { src: "/iconosInge/4202106excellogomicrosoftms-115582_115719.png", label: "Excel" },
+                  { src: "/iconosInge/office365_icon-icons.com_61639.png", label: "Office" },
+                  { src: "/iconosInge/4202011emailgmaillogomailsocialsocialmedia-115677_115624.png", label: "Email" },
                 ]}>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
                     Microsoft Excel: Nivel intermedio. Paquetes Ofimáticos: Nivel avanzado. Correo Electrónico y Herramientas Web: Manejo eficiente de plataformas digitales para comunicación y organización.
@@ -211,10 +211,10 @@ export const CVEngineer = () => {
                 </SkillGroup>
 
                 <SkillGroup title="Gestión de Documentos y Archivos" skills={[
-                  { src: "img/iconosInge/OneDrive_23654.png", label: "OneDrive" },
-                  { src: "img/iconosInge/4201991drivegooglegoogledrivelogosocialsocialmedia-115718_115583.png", label: "Drive" },
-                  { src: "img/iconosInge/dropbox_tile_logo_icon_168230.png", label: "Dropbox" },
-                  { src: "img/iconosInge/pdf_filetype_icon_177525.png", label: "PDF" },
+                  { src: "/iconosInge/OneDrive_23654.png", label: "OneDrive" },
+                  { src: "/iconosInge/4201991drivegooglegoogledrivelogosocialsocialmedia-115718_115583.png", label: "Drive" },
+                  { src: "/iconosInge/dropbox_tile_logo_icon_168230.png", label: "Dropbox" },
+                  { src: "/iconosInge/pdf_filetype_icon_177525.png", label: "PDF" },
                 ]}>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
                     Microsoft OneDrive, Google Drive, Dropbox, PDF (edición, combinación y firma digital), escaneo y digitalización de documentos.

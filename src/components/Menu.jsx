@@ -74,7 +74,7 @@ export const Menu = () => {
                   <div className="rounded-[1.6rem] p-[10px] bg-gradient-to-br">
                     <div className="rounded-[1.25rem] overflow-hidden bg-white">
                       <img
-                        src="img/joseph.jpeg"
+                        src="/joseph.jpeg"
                         alt="Joseph Sebastián Álvarez Ruiz"
                         className="w-full aspect-[4/5] object-cover object-top"
                         loading="eager"
