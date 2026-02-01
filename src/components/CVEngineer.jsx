@@ -3,6 +3,7 @@ import { FiDownload, FiArrowLeft } from 'react-icons/fi'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
 import { useImagePreload } from '../hooks/useImagePreload'
+import { ImageWithFallback } from './ImageWithFallback'
 
 // Lista de todas las imágenes a precargar
 const imageUrls = [
@@ -351,7 +352,7 @@ const SkillGroup = ({ title, skills, children }) => (
 
 const SkillItem = ({ src, label }) => (
   <div className="flex flex-col items-center gap-2 text-center transition-transform hover:-translate-y-1">
-    <img 
+    <ImageWithFallback
       src={src} 
       alt={label} 
       loading="eager"
