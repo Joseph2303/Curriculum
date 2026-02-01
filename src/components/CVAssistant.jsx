@@ -2,9 +2,13 @@ import { useNavigate } from 'react-router-dom'
 import { FiDownload, FiArrowLeft } from 'react-icons/fi'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
+import { useAutoReloadOnce } from '../hooks/useAutoReloadOnce'
 
 export const CVAssistant = () => {
   const navigate = useNavigate()
+  
+  // Auto-reload una sola vez si las imágenes no cargan
+  useAutoReloadOnce()
 
   const handleBackToMenu = () => {
     try {

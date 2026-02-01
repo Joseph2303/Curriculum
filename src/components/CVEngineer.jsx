@@ -3,6 +3,7 @@ import { FiDownload, FiArrowLeft } from 'react-icons/fi'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
 import { useImagePreload } from '../hooks/useImagePreload'
+import { useAutoReloadOnce } from '../hooks/useAutoReloadOnce'
 import { ImageWithFallback } from './ImageWithFallback'
 
 // Lista de todas las imágenes a precargar
@@ -53,6 +54,9 @@ const imageUrls = [
 export const CVEngineer = () => {
   const navigate = useNavigate()
   const imagesLoaded = useImagePreload(imageUrls)
+  
+  // Auto-reload una sola vez si las imágenes no cargan en Netlify
+  useAutoReloadOnce()
 
   const handleBackToMenu = () => {
     try {

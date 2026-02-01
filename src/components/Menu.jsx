@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
 import { useImagePreload } from '../hooks/useImagePreload'
+import { useAutoReloadOnce } from '../hooks/useAutoReloadOnce'
 
 // Precargar imágenes críticas del CV Engineer
 const engineerImages = [
@@ -18,6 +19,9 @@ export const Menu = () => {
   
   // Precargar imágenes en el menú
   useImagePreload(engineerImages)
+  
+  // Auto-reload una sola vez si las imágenes no cargan
+  useAutoReloadOnce()
 
   const go = (choice, route) => {
     try {
