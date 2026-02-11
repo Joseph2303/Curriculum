@@ -94,7 +94,7 @@ export const CVEngineer = () => {
               </p>
             </div>
             <div className="flex flex-col gap-2 w-full md:w-auto">
-              <a href="/files/Joseph Álvarez Ruiz..pdf" download className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold transition-colors">
+              <a href="/files/Joseph-Alvarez-Ruiz.pdf" download className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold transition-colors">
                 <FiDownload size={18} /> Descargar CV
               </a>
               <button onClick={handleBackToMenu} className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-lg font-semibold transition-colors border border-white/30">
@@ -291,7 +291,7 @@ export const CVEngineer = () => {
       {/* FAB buttons (mobile) */}
       <div className="fixed right-4 bottom-4 flex gap-2 items-center z-40 lg:hidden">
         <a
-          href="/files/Joseph Álvarez Ruiz..pdf"
+          href="/files/Joseph-Alvarez-Ruiz-CV.pdf"
           download
           className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold text-sm shadow-lg"
           aria-label="Descargar CV"
