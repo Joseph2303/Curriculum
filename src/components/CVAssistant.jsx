@@ -1,13 +1,15 @@
-import { useNavigate } from 'react-router-dom'
+﻿import { useNavigate } from 'react-router-dom'
 import { FiDownload, FiArrowLeft } from 'react-icons/fi'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
 import { useAutoReloadOnce } from '../hooks/useAutoReloadOnce'
 
+const CV_PDF_URL = (import.meta.env.BASE_URL || '/') + 'files/Joseph-Alvarez-Ruiz-CV.pdf'
+
 export const CVAssistant = () => {
   const navigate = useNavigate()
   
-  // Auto-reload una sola vez si las imágenes no cargan
+  // Auto-reload una sola vez si las imÃ¡genes no cargan
   useAutoReloadOnce()
 
   const handleBackToMenu = () => {
@@ -32,25 +34,25 @@ export const CVAssistant = () => {
               JA
             </div>
             <div className="text-center md:text-left">
-              <h1 className="text-2xl md:text-3xl font-bold mb-1">Joseph Sebastián Álvarez Ruiz</h1>
-              <p className="text-base md:text-lg opacity-95 mb-1">Asistente Administrativo | Profesional en Gestión y Tecnología</p>
-              <p className="text-sm opacity-95 mb-2">San José, Costa Rica</p>
+              <h1 className="text-2xl md:text-3xl font-bold mb-1">Joseph SebastiÃ¡n Ãlvarez Ruiz</h1>
+              <p className="text-base md:text-lg opacity-95 mb-1">Asistente Administrativo | Profesional en GestiÃ³n y TecnologÃ­a</p>
+              <p className="text-sm opacity-95 mb-2">San JosÃ©, Costa Rica</p>
               <p className="text-xs md:text-sm flex flex-wrap gap-2 justify-center md:justify-start">
                 <a href="mailto:jalvarezruiz3@gmail.com" className="hover:underline">jalvarezruiz3@gmail.com</a>
-                <span className="hidden md:inline">·</span>
+                <span className="hidden md:inline">Â·</span>
                 <a href="https://wa.me/50685812663?text=%C2%A1Hola!%20Te%20escribo%20despu%C3%A9s%20de%20ver%20tu%20curr%C3%ADculum.%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s." className="hover:underline">+506 8581 2663</a>
-                <span className="hidden md:inline">·</span>
+                <span className="hidden md:inline">Â·</span>
                 <a href="https://github.com/Joseph2303" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub</a>
-                <span className="hidden md:inline">·</span>
+                <span className="hidden md:inline">Â·</span>
                 <a href="https://www.linkedin.com/in/joseph-sebastian-%C3%A1lvarez-ruiz-bb6758187/" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
               </p>
             </div>
             <div className="flex flex-col gap-2 w-full md:w-auto">
-              <a href="/files/Joseph-Alvarez-Ruiz-CV.pdf" download className="inline-flex items-center justify-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-lg font-semibold transition-colors">
+              <a href={CV_PDF_URL} download className="inline-flex items-center justify-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-lg font-semibold transition-colors">
                 <FiDownload size={18} /> Descargar CV
               </a>
               <button onClick={handleBackToMenu} className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-3 rounded-lg font-semibold transition-colors border border-white/30">
-                <FiArrowLeft size={18} /> Volver al menú
+                <FiArrowLeft size={18} /> Volver al menÃº
               </button>
             </div>
           </div>
@@ -61,25 +63,25 @@ export const CVAssistant = () => {
         <div className="grid lg:grid-cols-[320px_1fr] gap-5">
           {/* Sidebar */}
           <aside className="space-y-4">
-            <Section title="Educación">
-              <p><strong>2025</strong> Universidad Nacional (UNA) Ingeniería en Sistemas de Información (Bachillerato)</p>
-              <p><strong>2023</strong> Universidad Nacional (UNA) Diplomado en Programación de Aplicaciones Informáticas</p>
-              <p><strong>2021</strong> Instituto COSVIC Técnico en Soporte para Computadoras</p>
-              <p><strong>2017</strong> Bachiller en Educación Media</p>
+            <Section title="EducaciÃ³n">
+              <p><strong>2025</strong> Universidad Nacional (UNA) IngenierÃ­a en Sistemas de InformaciÃ³n (Bachillerato)</p>
+              <p><strong>2023</strong> Universidad Nacional (UNA) Diplomado en ProgramaciÃ³n de Aplicaciones InformÃ¡ticas</p>
+              <p><strong>2021</strong> Instituto COSVIC TÃ©cnico en Soporte para Computadoras</p>
+              <p><strong>2017</strong> Bachiller en EducaciÃ³n Media</p>
             </Section>
 
             <Section title="Certificaciones">
-              <p><strong>2025</strong> Habilidades para la Empleabilidad, Servicio al Cliente y Herramientas Digitales (Fundación Aliarse & PADF)</p>
+              <p><strong>2025</strong> Habilidades para la Empleabilidad, Servicio al Cliente y Herramientas Digitales (FundaciÃ³n Aliarse & PADF)</p>
               <p><strong>2024</strong> Scrum Fundamentals Certified</p>
               <p><strong>2023</strong> RPA Developer Foundation Spanish</p>
             </Section>
 
-            <Section title="Afiliación profesional (Colegiatura)">
-              <p><strong>2026</strong> Colegio de Profesionales en Informática y Computación (CPIC)</p>
+            <Section title="AfiliaciÃ³n profesional (Colegiatura)">
+              <p><strong>2026</strong> Colegio de Profesionales en InformÃ¡tica y ComputaciÃ³n (CPIC)</p>
             </Section>
 
             <Section title="Capacitaciones y Congresos">
-              <p><strong>2024</strong> Congreso Iberoamericano de Computación para el Desarrollo (COMPDES 2024) Participación</p>
+              <p><strong>2024</strong> Congreso Iberoamericano de ComputaciÃ³n para el Desarrollo (COMPDES 2024) ParticipaciÃ³n</p>
             </Section>
 
             <Section title="Licencias de conducir">
@@ -88,7 +90,7 @@ export const CVAssistant = () => {
 
             <Section title="Habilidades Blandas">
               <div className="flex flex-wrap gap-2">
-                {['Comunicación efectiva', 'Trabajo en equipo', 'Resolución de problemas', 'Adaptabilidad', 'Gestión del tiempo', 'Responsabilidad', 'Pensamiento crítico', 'Creatividad', 'Autonomía', 'Servicio al cliente'].map((skill) => (
+                {['ComunicaciÃ³n efectiva', 'Trabajo en equipo', 'ResoluciÃ³n de problemas', 'Adaptabilidad', 'GestiÃ³n del tiempo', 'Responsabilidad', 'Pensamiento crÃ­tico', 'Creatividad', 'AutonomÃ­a', 'Servicio al cliente'].map((skill) => (
                   <span key={skill} className="inline-block bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full text-xs">
                     {skill}
                   </span>
@@ -101,82 +103,82 @@ export const CVAssistant = () => {
           <section className="space-y-4">
             <Card title="Perfil">
               <p className="text-justify">
-                Profesional con formación universitaria y amplia experiencia en atención al cliente, gestión documental, manejo de caja y procesos administrativos. Con sólidos conocimientos en herramientas digitales, organización de tareas, redacción de documentos y trato cordial al público. Me considero responsable, proactivo, con excelente capacidad de aprendizaje y adaptabilidad. Busco aportar mis habilidades al área administrativa para contribuir al buen funcionamiento de la organización.
+                Profesional con formaciÃ³n universitaria y amplia experiencia en atenciÃ³n al cliente, gestiÃ³n documental, manejo de caja y procesos administrativos. Con sÃ³lidos conocimientos en herramientas digitales, organizaciÃ³n de tareas, redacciÃ³n de documentos y trato cordial al pÃºblico. Me considero responsable, proactivo, con excelente capacidad de aprendizaje y adaptabilidad. Busco aportar mis habilidades al Ã¡rea administrativa para contribuir al buen funcionamiento de la organizaciÃ³n.
               </p>
             </Card>
 
             <Card title="Experiencia Profesional">
               <div className="space-y-6">
                 <ExperienceBlock
-                  title="Desarrollador Full Stack (Diseño de Software e Ingeniería Web)"
+                  title="Desarrollador Full Stack (DiseÃ±o de Software e IngenierÃ­a Web)"
                   company="Upgo Technology"
-                  period="ene. 2026 – actualidad"
+                  period="ene. 2026 â€“ actualidad"
                   duties={[
-                    "Rol con enfoque administrativo-operativo, apoyando la gestión y organización de procesos internos.",
-                    "Control y actualización de documentación e información, seguimiento de solicitudes y elaboración de reportes.",
-                    "Coordinación con distintas áreas para asegurar orden, cumplimiento de tiempos y operación eficiente."
+                    "Rol con enfoque administrativo-operativo, apoyando la gestiÃ³n y organizaciÃ³n de procesos internos.",
+                    "Control y actualizaciÃ³n de documentaciÃ³n e informaciÃ³n, seguimiento de solicitudes y elaboraciÃ³n de reportes.",
+                    "CoordinaciÃ³n con distintas Ã¡reas para asegurar orden, cumplimiento de tiempos y operaciÃ³n eficiente."
                   ]}
                 />
 
                 <ExperienceBlock
-                  title="Plataforma de Información Turística (Práctica profesional)"
+                  title="Plataforma de InformaciÃ³n TurÃ­stica (PrÃ¡ctica profesional)"
                   company="Municipalidad de La Cruz"
-                  period="jun. 2024 – nov. 2024 · 6 meses"
+                  period="jun. 2024 â€“ nov. 2024 Â· 6 meses"
                   duties={[
-                    "Gestioné el flujo de información turística (destinos, actividades y servicios), asegurando actualización, orden y calidad de los contenidos.",
-                    "Atendí consultas internas/externas, di seguimiento a requerimientos y registré incidencias para su resolución oportuna.",
-                    "Elaboré reportes de avance y tableros básicos (visitas, tiempos de respuesta, publicaciones), facilitando la toma de decisiones del área.",
-                    "Coordiné con las áreas de Turismo y Soporte para calendarizar tareas, levantar minutas y estandarizar procedimientos.",
-                    "Verifiqué lineamientos de usabilidad y accesibilidad en la información publicada, mejorando la experiencia de las personas usuarias."
+                    "GestionÃ© el flujo de informaciÃ³n turÃ­stica (destinos, actividades y servicios), asegurando actualizaciÃ³n, orden y calidad de los contenidos.",
+                    "AtendÃ­ consultas internas/externas, di seguimiento a requerimientos y registrÃ© incidencias para su resoluciÃ³n oportuna.",
+                    "ElaborÃ© reportes de avance y tableros bÃ¡sicos (visitas, tiempos de respuesta, publicaciones), facilitando la toma de decisiones del Ã¡rea.",
+                    "CoordinÃ© con las Ã¡reas de Turismo y Soporte para calendarizar tareas, levantar minutas y estandarizar procedimientos.",
+                    "VerifiquÃ© lineamientos de usabilidad y accesibilidad en la informaciÃ³n publicada, mejorando la experiencia de las personas usuarias."
                   ]}
                 />
 
                 <ExperienceBlock
                   title="Sistema de Control de Empleados con Face ID"
                   company="Coriport"
-                  period="feb. 2023 – jun. 2024 · 1 año 5 meses"
+                  period="feb. 2023 â€“ jun. 2024 Â· 1 aÃ±o 5 meses"
                   duties={[
-                    "Apoyé el levantamiento de requerimientos con RR. HH. y Operaciones, documentando alcances, casos de uso y flujos de trabajo.",
-                    "Organicé el plan de trabajo (cronograma, hitos, responsables) y di seguimiento mediante tableros de tareas y reportes de estado.",
-                    "Redacté minutas, gestioné acuerdos y controlé versiones de documentos, asegurando trazabilidad y cumplimiento de entregables.",
-                    "Coordiné pruebas funcionales con usuarios clave, registré hallazgos y gestioné su cierre antes de la puesta en marcha.",
-                    "Colaboré en la preparación de manuales de uso."
+                    "ApoyÃ© el levantamiento de requerimientos con RR. HH. y Operaciones, documentando alcances, casos de uso y flujos de trabajo.",
+                    "OrganicÃ© el plan de trabajo (cronograma, hitos, responsables) y di seguimiento mediante tableros de tareas y reportes de estado.",
+                    "RedactÃ© minutas, gestionÃ© acuerdos y controlÃ© versiones de documentos, asegurando trazabilidad y cumplimiento de entregables.",
+                    "CoordinÃ© pruebas funcionales con usuarios clave, registrÃ© hallazgos y gestionÃ© su cierre antes de la puesta en marcha.",
+                    "ColaborÃ© en la preparaciÃ³n de manuales de uso."
                   ]}
                 />
 
                 <ExperienceBlock
                   title="Otras Experiencias"
                   duties={[
-                    "Asociación de Estudiantes de la Universidad Nacional (ASO-UNA): Participé en la coordinación de talleres y eventos, gestioné inscripciones y asistencia, y elaboración de reportes con resultados."
+                    "AsociaciÃ³n de Estudiantes de la Universidad Nacional (ASO-UNA): ParticipÃ© en la coordinaciÃ³n de talleres y eventos, gestionÃ© inscripciones y asistencia, y elaboraciÃ³n de reportes con resultados."
                   ]}
                 />
               </div>
             </Card>
 
-            <Card title="Habilidades Técnicas">
+            <Card title="Habilidades TÃ©cnicas">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">Conocimientos Informáticos</h3>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">Conocimientos InformÃ¡ticos</h3>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 text-sm">
-                    <li><strong>Microsoft Excel</strong> — Nivel intermedio.</li>
-                    <li><strong>Paquetes Ofimáticos</strong> — Nivel avanzado.</li>
-                    <li><strong>Correo Electrónico y Herramientas Web</strong> — Manejo eficiente de plataformas digitales para comunicación y organización.</li>
+                    <li><strong>Microsoft Excel</strong> â€” Nivel intermedio.</li>
+                    <li><strong>Paquetes OfimÃ¡ticos</strong> â€” Nivel avanzado.</li>
+                    <li><strong>Correo ElectrÃ³nico y Herramientas Web</strong> â€” Manejo eficiente de plataformas digitales para comunicaciÃ³n y organizaciÃ³n.</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">Gestión de Documentos y Archivos</h3>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">GestiÃ³n de Documentos y Archivos</h3>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 text-sm">
                     <li>Microsoft OneDrive</li>
                     <li>Google Drive</li>
                     <li>Dropbox</li>
-                    <li>PDF (edición, combinación y firma digital)</li>
-                    <li>Escaneo y digitalización de documentos</li>
+                    <li>PDF (ediciÃ³n, combinaciÃ³n y firma digital)</li>
+                    <li>Escaneo y digitalizaciÃ³n de documentos</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">Presentaciones y Comunicación</h3>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">Presentaciones y ComunicaciÃ³n</h3>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 text-sm">
                     <li>Microsoft PowerPoint</li>
                     <li>Canva</li>
@@ -188,28 +190,28 @@ export const CVAssistant = () => {
                 <div>
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">Manejo de Herramientas Administrativas</h3>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 text-sm">
-                    <li><strong>Correo electrónico</strong> (Outlook, Gmail)</li>
-                    <li><strong>Calendarios compartidos</strong> y gestión de citas</li>
-                    <li><strong>Redacción</strong> de oficios, informes y cartas formales</li>
+                    <li><strong>Correo electrÃ³nico</strong> (Outlook, Gmail)</li>
+                    <li><strong>Calendarios compartidos</strong> y gestiÃ³n de citas</li>
+                    <li><strong>RedacciÃ³n</strong> de oficios, informes y cartas formales</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">Sistemas de Organización y Productividad</h3>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">Sistemas de OrganizaciÃ³n y Productividad</h3>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 text-sm">
                     <li>Microsoft Outlook (calendario y tareas)</li>
                     <li>Google Calendar</li>
                     <li>Microsoft OneNote, Evernote</li>
                     <li>Microsoft To Do, Google Tasks, recordatorios</li>
-                    <li>Agenda física y digital</li>
+                    <li>Agenda fÃ­sica y digital</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">Atención al Cliente y Redacción</h3>
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">AtenciÃ³n al Cliente y RedacciÃ³n</h3>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 text-sm">
-                    <li><strong>Comunicación escrita</strong> clara y profesional</li>
-                    <li><strong>Respuestas a consultas</strong>, seguimiento de tareas y elaboración de reportes</li>
+                    <li><strong>ComunicaciÃ³n escrita</strong> clara y profesional</li>
+                    <li><strong>Respuestas a consultas</strong>, seguimiento de tareas y elaboraciÃ³n de reportes</li>
                   </ul>
                 </div>
 
@@ -217,7 +219,7 @@ export const CVAssistant = () => {
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3">Herramientas Asistidas por IA</h3>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2 text-sm">
                     <li><strong>ChatGPT, Grammarly, Tome, Gamma</strong></li>
-                    <li>Uso para redacción, síntesis de información y generación de contenido</li>
+                    <li>Uso para redacciÃ³n, sÃ­ntesis de informaciÃ³n y generaciÃ³n de contenido</li>
                   </ul>
                 </div>
               </div>
@@ -225,9 +227,9 @@ export const CVAssistant = () => {
 
             <Card title="Recomendaciones">
               <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-                <li>MSc. Andrés Alberto Cortés Fuentes — Jefe del Departamento de Tecnologías de Información, Municipalidad de Carrillo</li>
-                <li>Gretel Vega Alemán — Municipalidad de La Cruz, Gestora de Turismo</li>
-                <li>MSc. Eddier López López — Coordinador Académico de Ingeniería en Sistemas de Información, UNA</li>
+                <li>MSc. AndrÃ©s Alberto CortÃ©s Fuentes â€” Jefe del Departamento de TecnologÃ­as de InformaciÃ³n, Municipalidad de Carrillo</li>
+                <li>Gretel Vega AlemÃ¡n â€” Municipalidad de La Cruz, Gestora de Turismo</li>
+                <li>MSc. Eddier LÃ³pez LÃ³pez â€” Coordinador AcadÃ©mico de IngenierÃ­a en Sistemas de InformaciÃ³n, UNA</li>
               </ul>
             </Card>
           </section>
@@ -239,7 +241,7 @@ export const CVAssistant = () => {
       {/* FAB buttons (mobile) */}
       <div className="fixed right-4 bottom-4 flex gap-2 items-center z-40 lg:hidden">
         <a
-          href="/files/Joseph-Alvarez-Ruiz-CV.pdf"
+          href={CV_PDF_URL}
           download
           className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold text-sm shadow-lg"
           aria-label="Descargar CV"
@@ -249,9 +251,9 @@ export const CVAssistant = () => {
         <button
           onClick={handleBackToMenu}
           className="inline-flex items-center gap-2 px-4 py-3 rounded-full bg-gray-700 text-white font-semibold text-sm shadow-lg"
-          aria-label="Volver al menú"
+          aria-label="Volver al menÃº"
         >
-          <FiArrowLeft size={18} /> Menú
+          <FiArrowLeft size={18} /> MenÃº
         </button>
       </div>
     </div>
@@ -324,3 +326,5 @@ const ExperienceBlock = ({ title, company, period, duties }) => (
     </ul>
   </div>
 )
+
+
