@@ -1,4 +1,4 @@
-import { FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi'
+﻿import { FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi'
 
 export const Footer = () => (
   <footer className="mt-8 border-t border-gray-200/70 dark:border-gray-800/70 bg-gradient-to-b from-white/40 to-white dark:from-gray-900/40 dark:to-gray-950">
@@ -57,3 +57,5 @@ export const Footer = () => (
     </div>
   </footer>
 )
+
+

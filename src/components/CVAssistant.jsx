@@ -4,7 +4,7 @@ import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
 import { useAutoReloadOnce } from '../hooks/useAutoReloadOnce'
 
-const CV_PDF_URL = (import.meta.env.BASE_URL || '/') + 'files/Joseph-Alvarez-Ruiz-CV.pdf'
+const CV_PDF_URL = (import.meta.env.BASE_URL || '/') + 'files/joseph_alvarez_cv.pdf'
 
 export const CVAssistant = () => {
   const navigate = useNavigate()

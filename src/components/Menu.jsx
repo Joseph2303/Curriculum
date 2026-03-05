@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+﻿import { useNavigate } from 'react-router-dom'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
 import { useImagePreload } from '../hooks/useImagePreload'
@@ -28,16 +28,16 @@ export const Menu = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-50 via-white to-slate-100 dark:from-gray-950 dark:via-gray-950 dark:to-black">
+    <div className="relative isolate overflow-hidden min-h-screen flex flex-col bg-gradient-to-b from-slate-50 via-white to-slate-100 dark:from-gray-950 dark:via-gray-950 dark:to-black">
       <ThemeToggle />
 
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 left-1/2 h-[30rem] w-[55rem] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl dark:bg-blue-500/10" />
         <div className="absolute top-32 -left-36 h-[22rem] w-[22rem] rounded-full bg-indigo-500/10 blur-3xl dark:bg-indigo-500/10" />
         <div className="absolute bottom-0 right-0 h-[26rem] w-[26rem] rounded-full bg-sky-400/10 blur-3xl dark:bg-sky-400/10" />
       </div>
 
-      <main className="relative flex-1">
+      <main className="relative z-10 flex-1">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10 py-10 md:py-14">
           <header className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
             <div className="space-y-5">
@@ -90,7 +90,7 @@ export const Menu = () => {
             </div>
           </header>
 
-          <section className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
+          <section className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <article className="group relative overflow-hidden rounded-3xl border border-blue-200/70 dark:border-blue-900/50 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 p-6 shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl">
               <div aria-hidden="true" className="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
               <div
@@ -183,6 +183,53 @@ export const Menu = () => {
                 </button>
               </div>
             </article>
+
+            <article className="group relative overflow-hidden rounded-3xl border border-emerald-200/80 dark:border-emerald-900/50 bg-gradient-to-br from-emerald-600 via-teal-700 to-cyan-800 p-6 shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl">
+              <div aria-hidden="true" className="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-gradient-to-r from-white/0 via-white/10 to-white/0"
+              />
+
+              <div className="relative flex items-start justify-between gap-4">
+                <div>
+                  <div className="inline-flex items-center gap-2 rounded-full bg-black/20 text-emerald-100 ring-1 ring-white/20 px-3 py-1 text-[11px] font-semibold">
+                    Portafolio
+                  </div>
+                  <h2 className="mt-3 text-xl sm:text-2xl font-black text-white">Mis Proyectos</h2>
+                  <p className="mt-2 text-sm text-emerald-100/90 leading-relaxed">
+                    Un espacio para mostrar apps, sistemas y trabajos destacados con stack, repositorio y demo.
+                  </p>
+                </div>
+
+                <div className="shrink-0 hidden sm:flex flex-col items-end">
+                  <p className="text-xs text-emerald-100/80 font-semibold">Ideal para:</p>
+                  <p className="text-xs text-emerald-50">Reclutadores - Clientes</p>
+                </div>
+              </div>
+
+              <div className="relative mt-5 flex flex-wrap gap-2">
+                {['Frontend', 'Backend', 'Full Stack', 'UI/UX', 'Deploy'].map((item) => (
+                  <span
+                    key={item}
+                    className="text-[11px] px-2.5 py-1 rounded-full bg-white/10 text-white/90 ring-1 ring-white/15"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              <div className="relative mt-6 flex items-center justify-between gap-3">
+                <p className="text-xs text-emerald-100/80">Agrupa tus proyectos en una sola vista.</p>
+                <button
+                  onClick={() => go('projects', '/projects')}
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs sm:text-sm font-extrabold text-emerald-900 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/30"
+                  type="button"
+                >
+                  Ver proyectos <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </article>
           </section>
         </div>
       </main>
@@ -190,3 +237,6 @@ export const Menu = () => {
     </div>
   )
 }
+
+
+

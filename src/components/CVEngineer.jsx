@@ -51,7 +51,7 @@ const imageUrls = [
   "/iconosInge/pdf_filetype_icon_177525.png",
 ]
 
-const CV_PDF_URL = (import.meta.env.BASE_URL || '/') + 'files/Joseph-Alvarez-Ruiz-CV.pdf'
+const CV_PDF_URL = (import.meta.env.BASE_URL || '/') + 'files/Joseph-Alvarez-Ruiz.pdf'
 
 export const CVEngineer = () => {
   const navigate = useNavigate()
