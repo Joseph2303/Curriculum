@@ -1,4 +1,5 @@
 ﻿import { useNavigate } from 'react-router-dom'
+import { FiArrowRight, FiBriefcase, FiCode, FiGithub, FiLayers, FiLinkedin, FiMail, FiMapPin } from 'react-icons/fi'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
 import { useImagePreload } from '../hooks/useImagePreload'
@@ -12,6 +13,69 @@ const engineerImages = [
   '/iconosInge/react_original_wordmark_logo_icon_146375.png',
   '/iconosInge/nodejs_original_wordmark_logo_icon_146412.png',
   '/iconosInge/mysql_original_wordmark_logo_icon_146417.png',
+]
+
+const options = [
+  {
+    choice: 'engineer',
+    route: '/cv-engineer',
+    icon: FiCode,
+    label: 'Perfil técnico',
+    title: 'CV de Ingeniero en Sistemas',
+    description: 'Desarrollo web, APIs, bases de datos, arquitectura de software, buenas prácticas y resolución de problemas.',
+    idealFor: 'TI · Desarrollo · Soporte',
+    tags: ['React', 'Node.js', 'Laravel', 'PostgreSQL', 'Git'],
+    cta: 'Ver currículum',
+    style: {
+      bar: 'bg-blue-600',
+      icon: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300',
+      label: 'text-blue-700 dark:text-blue-400',
+      button: 'bg-blue-600 hover:bg-blue-700',
+      border: 'hover:border-blue-300 dark:hover:border-blue-800',
+    },
+  },
+  {
+    choice: 'assistant',
+    route: '/cv-assistant',
+    icon: FiBriefcase,
+    label: 'Perfil administrativo',
+    title: 'CV de Asistente Administrativo',
+    description: 'Organización, coordinación, servicio al cliente, control documental y elaboración de reportes.',
+    idealFor: 'Oficina · Gestión',
+    tags: ['Excel', 'Atención al cliente', 'Reportes', 'Organización', 'Comunicación'],
+    cta: 'Ver currículum',
+    style: {
+      bar: 'bg-violet-600',
+      icon: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300',
+      label: 'text-violet-700 dark:text-violet-400',
+      button: 'bg-violet-600 hover:bg-violet-700',
+      border: 'hover:border-violet-300 dark:hover:border-violet-800',
+    },
+  },
+  {
+    choice: 'projects',
+    route: '/projects',
+    icon: FiLayers,
+    label: 'Portafolio',
+    title: 'Proyectos',
+    description: 'Sistemas y aplicaciones web en producción, con su stack tecnológico, repositorio y sitio en línea.',
+    idealFor: 'Reclutadores · Clientes',
+    tags: ['Frontend', 'Backend', 'Full Stack', 'UI/UX', 'Deploy'],
+    cta: 'Ver proyectos',
+    style: {
+      bar: 'bg-emerald-600',
+      icon: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300',
+      label: 'text-emerald-700 dark:text-emerald-400',
+      button: 'bg-emerald-600 hover:bg-emerald-700',
+      border: 'hover:border-emerald-300 dark:hover:border-emerald-800',
+    },
+  },
+]
+
+const links = [
+  { icon: FiMail, label: 'Correo', href: 'mailto:jalvarezruiz3@gmail.com' },
+  { icon: FiLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/joseph-sebastian-%C3%A1lvarez-ruiz-bb6758187/', external: true },
+  { icon: FiGithub, label: 'GitHub', href: 'https://github.com/Joseph2303', external: true },
 ]
 
 export const Menu = () => {
@@ -28,215 +92,128 @@ export const Menu = () => {
   }
 
   return (
-    <div className="relative isolate overflow-hidden min-h-screen flex flex-col bg-gradient-to-b from-slate-50 via-white to-slate-100 dark:from-gray-950 dark:via-gray-950 dark:to-black">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-gray-950">
       <ThemeToggle />
 
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 left-1/2 h-[30rem] w-[55rem] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl dark:bg-blue-500/10" />
-        <div className="absolute top-32 -left-36 h-[22rem] w-[22rem] rounded-full bg-indigo-500/10 blur-3xl dark:bg-indigo-500/10" />
-        <div className="absolute bottom-0 right-0 h-[26rem] w-[26rem] rounded-full bg-sky-400/10 blur-3xl dark:bg-sky-400/10" />
-      </div>
+      <header className="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-5 pt-20 pb-12 md:pt-16 md:pb-14">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 items-center">
+            <div className="order-2 md:order-1">
+              <p className="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-slate-50 dark:bg-gray-950/60 px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-300">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                Currículum y portafolio profesional
+              </p>
 
-      <main className="relative z-10 flex-1">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 md:px-10 py-10 md:py-14">
-          <header className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
-            <div className="space-y-5">
-              <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-gray-900/60 backdrop-blur px-3 py-1.5 shadow-sm">
-                <span className="text-xs text-gray-500 dark:text-gray-400">•</span>
-                <span className="text-xs font-semibold text-blue-700 dark:text-blue-300">Actualizado: Feb. 2026</span>
-              </div>
-
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white">
-                Menú de currículums
+              <h1 className="mt-6 text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Joseph Sebastián Álvarez Ruiz
               </h1>
-              <p className="mt-2 text-lg sm:text-2xl font-black text-gray-900 dark:text-gray-100 leading-tight">
-                Elige el perfil según el puesto
+              <p className="mt-3 text-lg md:text-xl text-gray-600 dark:text-gray-300">
+                Ingeniero en Sistemas de Información · Desarrollador Full Stack
               </p>
-              <p className="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-300">
-                Sistemas • Administración • Tecnología
+              <p className="mt-2 inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
+                <FiMapPin size={14} /> San José, Costa Rica
               </p>
-              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl">
-                Aquí tienes dos versiones de mi CV: una enfocada en ingeniería y desarrollo, y otra enfocada en gestión
-                administrativa y servicio al cliente.
+
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-600 dark:text-gray-300">
+                Bienvenido. Aquí encontrará dos versiones de mi currículum, según el tipo de puesto, y un portafolio con
+                los proyectos que he desarrollado.
               </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                {links.map(({ icon: Icon, label, href, external }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    className="inline-flex items-center gap-2 rounded-lg border border-gray-200 dark:border-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 transition-colors hover:border-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+                  >
+                    <Icon size={15} /> {label}
+                  </a>
+                ))}
+              </div>
             </div>
 
-            <div className="relative">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-blue-500/20 via-indigo-500/10 to-transparent blur-2xl"
+            <div className="order-1 md:order-2 flex justify-center md:justify-end">
+              <img
+                src="/joseph.jpeg"
+                alt="Joseph Sebastián Álvarez Ruiz"
+                className="h-44 w-44 md:h-64 md:w-56 rounded-2xl object-cover object-top ring-1 ring-gray-200 dark:ring-gray-800 shadow-lg"
+                loading="eager"
               />
+            </div>
+          </div>
+        </div>
+      </header>
 
-              <div className="relative rounded-[2rem] border border-gray-200/70 dark:border-gray-800/70 bg-white/70 dark:bg-gray-900/60 backdrop-blur shadow-[0_30px_90px_-50px_rgba(0,0,0,0.55)] overflow-hidden">
-                <div className="px-4 pt-5 pb-3 text-center">
-                  <p className="text-base sm:text-lg font-black text-gray-900 dark:text-gray-100 leading-tight">
-                    Joseph Álvarez Ruiz
-                  </p>
-                </div>
+      <main className="flex-1 w-full max-w-6xl mx-auto px-5 py-12">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
+              Seleccione un perfil
+            </p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              ¿Qué desea consultar?
+            </h2>
+          </div>
+          <p className="text-xs text-gray-500 dark:text-gray-400">Actualizado: feb. 2026</p>
+        </div>
 
-                <div className="px-4 pb-4">
-                  <div className="rounded-[1.6rem] p-[10px] bg-gradient-to-br">
-                    <div className="rounded-[1.25rem] overflow-hidden bg-white">
-                      <img
-                        src="/joseph.jpeg"
-                        alt="Joseph Sebastián Álvarez Ruiz"
-                        className="w-full aspect-[4/5] object-cover object-top"
-                        loading="eager"
-                      />
+        <section className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+          {options.map((opt) => {
+            const Icon = opt.icon
+            return (
+              <article
+                key={opt.choice}
+                className={`group flex flex-col rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg ${opt.style.border}`}
+              >
+                <div className={`h-1 rounded-t-2xl ${opt.style.bar}`} />
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className={`grid h-11 w-11 place-items-center rounded-xl ${opt.style.icon}`}>
+                      <Icon size={20} />
+                    </span>
+                    <span className={`text-xs font-semibold uppercase tracking-[0.14em] ${opt.style.label}`}>
+                      {opt.label}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-5 text-xl font-semibold text-gray-900 dark:text-white">{opt.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{opt.description}</p>
+
+                  <div className="mt-5 flex flex-wrap gap-1.5">
+                    {opt.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-md bg-slate-100 dark:bg-gray-800 px-2 py-1 text-[11px] font-medium text-gray-700 dark:text-gray-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-auto pt-6">
+                    <div className="border-t border-gray-100 dark:border-gray-800 pt-5">
+                      <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <span className="font-medium text-gray-700 dark:text-gray-300">Ideal para:</span> {opt.idealFor}
+                      </p>
+                      <button
+                        onClick={() => go(opt.choice, opt.route)}
+                        className={`mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold text-white transition-colors ${opt.style.button}`}
+                        type="button"
+                      >
+                        {opt.cta}
+                        <FiArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+                      </button>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </header>
-
-          <section className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <article className="group relative overflow-hidden rounded-3xl border border-blue-200/70 dark:border-blue-900/50 bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 p-6 shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl">
-              <div aria-hidden="true" className="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-gradient-to-r from-white/0 via-white/10 to-white/0"
-              />
-
-              <div className="relative flex items-start justify-between gap-4">
-                <div>
-                  <div className="inline-flex items-center gap-2 rounded-full bg-black/25 text-blue-100 ring-1 ring-white/15 px-3 py-1 text-[11px] font-semibold">
-                    Perfil técnico
-                  </div>
-                  <h2 className="mt-3 text-xl sm:text-2xl font-black text-white">CV de Ingeniero en Sistemas</h2>
-                  <p className="mt-2 text-sm text-blue-100/90 leading-relaxed">
-                    Enfocado en desarrollo web, APIs, bases de datos, arquitectura, buenas prácticas y resolución de
-                    problemas.
-                  </p>
-                </div>
-
-                <div className="shrink-0 hidden sm:flex flex-col items-end">
-                  <p className="text-xs text-blue-100/80 font-semibold">Ideal para:</p>
-                  <p className="text-xs text-blue-50">TI • Desarrollo • Soporte</p>
-                </div>
-              </div>
-
-              <div className="relative mt-5 flex flex-wrap gap-2">
-                {['React', 'Node.js', 'Laravel', 'PostgreSQL', 'Git'].map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-[11px] px-2.5 py-1 rounded-full bg-white/10 text-white/90 ring-1 ring-white/15"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              <div className="relative mt-6 flex items-center justify-between gap-3">
-                <p className="text-xs text-blue-100/80">Incluye experiencia técnica, stack y proyectos.</p>
-                <button
-                  onClick={() => go('engineer', '/cv-engineer')}
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs sm:text-sm font-extrabold text-blue-900 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/30"
-                  type="button"
-                >
-                  Ver currículum <span aria-hidden="true">↗</span>
-                </button>
-              </div>
-            </article>
-
-            <article className="group relative overflow-hidden rounded-3xl border border-gray-200/80 dark:border-gray-800 bg-white/80 dark:bg-gray-900/60 backdrop-blur p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl">
-              <div aria-hidden="true" className="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-blue-500/10 blur-2xl" />
-
-              <div className="relative flex items-start justify-between gap-4">
-                <div>
-                  <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 ring-1 ring-gray-200 dark:ring-gray-700 px-3 py-1 text-[11px] font-semibold">
-                    Perfil administrativo
-                  </div>
-                  <h2 className="mt-3 text-xl sm:text-2xl font-black text-gray-900 dark:text-gray-100">
-                    CV de Asistente Administrativo
-                  </h2>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Enfocado en organización, coordinación, servicio al cliente, control documental y reportes.
-                  </p>
-                </div>
-
-                <div className="shrink-0 hidden sm:flex flex-col items-end">
-                  <p className="text-xs text-gray-600 dark:text-gray-300 font-semibold">Ideal para:</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">Oficina • Gestión</p>
-                </div>
-              </div>
-
-              <div className="relative mt-5 flex flex-wrap gap-2">
-                {['Excel', 'Atención al cliente', 'Reportes', 'Organización', 'Comunicación'].map((skill) => (
-                  <span
-                    key={skill}
-                    className="text-[11px] px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 ring-1 ring-gray-200 dark:ring-gray-700"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
-              <div className="relative mt-6 flex items-center justify-between gap-3">
-                <p className="text-xs text-gray-500 dark:text-gray-400">Perfil claro para roles administrativos.</p>
-                <button
-                  onClick={() => go('assistant', '/cv-assistant')}
-                  className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2.5 text-xs sm:text-sm font-extrabold text-white shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-400/30"
-                  type="button"
-                >
-                  Ver currículum <span aria-hidden="true">↗</span>
-                </button>
-              </div>
-            </article>
-
-            <article className="group relative overflow-hidden rounded-3xl border border-emerald-200/80 dark:border-emerald-900/50 bg-gradient-to-br from-emerald-600 via-teal-700 to-cyan-800 p-6 shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl">
-              <div aria-hidden="true" className="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-gradient-to-r from-white/0 via-white/10 to-white/0"
-              />
-
-              <div className="relative flex items-start justify-between gap-4">
-                <div>
-                  <div className="inline-flex items-center gap-2 rounded-full bg-black/20 text-emerald-100 ring-1 ring-white/20 px-3 py-1 text-[11px] font-semibold">
-                    Portafolio
-                  </div>
-                  <h2 className="mt-3 text-xl sm:text-2xl font-black text-white">Mis Proyectos</h2>
-                  <p className="mt-2 text-sm text-emerald-100/90 leading-relaxed">
-                    Un espacio para mostrar apps, sistemas y trabajos destacados con stack, repositorio y demo.
-                  </p>
-                </div>
-
-                <div className="shrink-0 hidden sm:flex flex-col items-end">
-                  <p className="text-xs text-emerald-100/80 font-semibold">Ideal para:</p>
-                  <p className="text-xs text-emerald-50">Reclutadores - Clientes</p>
-                </div>
-              </div>
-
-              <div className="relative mt-5 flex flex-wrap gap-2">
-                {['Frontend', 'Backend', 'Full Stack', 'UI/UX', 'Deploy'].map((item) => (
-                  <span
-                    key={item}
-                    className="text-[11px] px-2.5 py-1 rounded-full bg-white/10 text-white/90 ring-1 ring-white/15"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              <div className="relative mt-6 flex items-center justify-between gap-3">
-                <p className="text-xs text-emerald-100/80">Agrupa tus proyectos en una sola vista.</p>
-                <button
-                  onClick={() => go('projects', '/projects')}
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs sm:text-sm font-extrabold text-emerald-900 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/30"
-                  type="button"
-                >
-                  Ver proyectos <span aria-hidden="true">↗</span>
-                </button>
-              </div>
-            </article>
-          </section>
-        </div>
+              </article>
+            )
+          })}
+        </section>
       </main>
+
       <Footer />
     </div>
   )
 }
-
-
-
