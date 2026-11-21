@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FiArrowLeft, FiArrowUpRight, FiCheck, FiExternalLink, FiGithub, FiLayers } from 'react-icons/fi'
+import { FiArrowLeft, FiArrowUpRight, FiCheck, FiExternalLink, FiGithub, FiLayers, FiLock } from 'react-icons/fi'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
 
@@ -30,34 +30,27 @@ const projects = [
     status: 'En producción',
   },
   {
-    title: 'Upgo Technology Shop',
-    category: 'Sistema de pedidos',
+    title: 'Sistemas de pedidos en línea',
+    category: 'Experiencia profesional',
     description:
-      'Sistema de pedidos en línea de Upgo Technology, desplegado y en uso por clientes reales.',
-    highlights: ['Gestión de pedidos en línea', 'Sitio en producción'],
+      'Participación en el desarrollo de dos sistemas de pedidos en línea para clientes del sector comercial, actualmente en producción y en uso por usuarios reales.',
+    highlights: ['Gestión de pedidos en línea', 'Despliegue y mantenimiento en producción'],
     stack: [],
     repoUrl: '',
-    liveUrl: 'https://shop.upgotechnology.com',
+    liveUrl: '',
+    confidential: true,
     status: 'En producción',
   },
   {
-    title: 'Zhongbo CR',
-    category: 'Sistema de pedidos',
-    description: 'Sistema de pedidos en línea para Zhongbo Costa Rica, desplegado y en uso por clientes reales.',
-    highlights: ['Gestión de pedidos en línea', 'Sitio en producción'],
-    stack: [],
-    repoUrl: '',
-    liveUrl: 'https://zhongbocr.com',
-    status: 'En producción',
-  },
-  {
-    title: 'Upgo Technology',
-    category: 'Sitio web informativo',
-    description: 'Sitio web corporativo de Upgo Technology que presenta la empresa, sus servicios e información de contacto.',
+    title: 'Sitio web corporativo',
+    category: 'Experiencia profesional',
+    description:
+      'Participación en el desarrollo de un sitio web informativo que presenta a una empresa, sus servicios e información de contacto.',
     highlights: ['Presentación de la empresa y sus servicios', 'Sitio en producción'],
     stack: [],
     repoUrl: '',
-    liveUrl: 'https://upgotechnology.com',
+    liveUrl: '',
+    confidential: true,
     status: 'En producción',
   },
   {
@@ -320,6 +313,10 @@ const ProjectCard = ({ project, index }) => (
             >
               <FiExternalLink size={15} /> {project.repoUrl ? 'Ver demo' : 'Visitar sitio'}
             </a>
+          ) : project.confidential ? (
+            <span className="inline-flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+              <FiLock size={14} /> Proyecto de cliente · Detalles reservados por confidencialidad
+            </span>
           ) : (
             <span className="text-xs text-gray-400 dark:text-gray-500">Demo no disponible públicamente</span>
           )}
