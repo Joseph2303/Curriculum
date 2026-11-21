@@ -2,6 +2,7 @@
 import { FiArrowRight, FiBriefcase, FiCode, FiGithub, FiLayers, FiLinkedin, FiMail, FiMapPin } from 'react-icons/fi'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
+import { FadeImage } from './Skeletons'
 import { useImagePreload } from '../hooks/useImagePreload'
 import { useAutoReloadOnce } from '../hooks/useAutoReloadOnce'
 
@@ -134,7 +135,7 @@ export const Menu = () => {
             </div>
 
             <div className="order-1 md:order-2 flex justify-center md:justify-end">
-              <img
+              <FadeImage
                 src="/joseph.jpeg"
                 alt="Joseph Sebastián Álvarez Ruiz"
                 className="h-44 w-44 md:h-64 md:w-56 rounded-2xl object-cover object-top ring-1 ring-gray-200 dark:ring-gray-800 shadow-lg"

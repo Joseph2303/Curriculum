@@ -1,6 +1,7 @@
 import { FiArrowLeft, FiDownload, FiGithub, FiLinkedin, FiMail, FiMapPin, FiPhone } from 'react-icons/fi'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
+import { FadeImage } from './Skeletons'
 
 // Clases completas por color de acento (Tailwind necesita strings literales)
 export const accents = {
@@ -59,7 +60,7 @@ export const CVPage = ({ accent = 'blue', role, eyebrow, pdfUrl, whatsappUrl = '
           </button>
 
           <div className="mt-8 grid grid-cols-1 md:grid-cols-[auto_1fr_auto] gap-6 md:gap-8 items-center">
-            <img
+            <FadeImage
               src="/joseph.jpeg"
               alt="Joseph Sebastián Álvarez Ruiz"
               className="h-28 w-28 md:h-32 md:w-32 rounded-2xl object-cover object-top ring-1 ring-gray-200 dark:ring-gray-800 shadow-sm"

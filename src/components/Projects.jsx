@@ -1,8 +1,12 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FiArrowLeft, FiArrowUpRight, FiCheck, FiExternalLink, FiGithub, FiLayers, FiLock } from 'react-icons/fi'
+import { FiArrowLeft, FiArrowUpRight, FiCheck, FiExternalLink, FiGithub, FiLayers, FiLock, FiMail, FiMessageCircle } from 'react-icons/fi'
 import { ThemeToggle } from './ThemeToggle'
 import { Footer } from './Footer'
+
+const DEMO_MESSAGE = 'Hola Joseph, vi tu portafolio y me gustaría agendar una demostración de tus proyectos.'
+const DEMO_WHATSAPP = `https://wa.me/50685812663?text=${encodeURIComponent(DEMO_MESSAGE)}`
+const DEMO_EMAIL = `mailto:jalvarezruiz3@gmail.com?subject=${encodeURIComponent('Demostración de proyectos')}&body=${encodeURIComponent(DEMO_MESSAGE)}`
 
 const GITHUB_PROFILE = 'https://github.com/Joseph2303'
 
@@ -168,6 +172,36 @@ export const Projects = () => {
       </header>
 
       <main id="main" className="flex-1 w-full max-w-6xl mx-auto px-5 py-10">
+        {/* Aviso: sistemas con inicio de sesión */}
+        <aside className="mb-8 flex flex-col md:flex-row md:items-center gap-5 rounded-2xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/70 dark:bg-emerald-950/30 p-5 md:p-6">
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white text-emerald-700 ring-1 ring-emerald-200 dark:bg-gray-900 dark:text-emerald-400 dark:ring-emerald-900">
+            <FiLock size={20} />
+          </span>
+          <div className="flex-1">
+            <h2 className="font-semibold text-gray-900 dark:text-white">¿Un proyecto le pide iniciar sesión?</h2>
+            <p className="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+              Varios de estos sistemas son plataformas privadas y al ingresar muestran una pantalla de inicio de sesión.
+              Si desea conocerlos por dentro, con mucho gusto podemos agendar una demostración y recorrerlos juntos.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-2 shrink-0">
+            <a
+              href={DEMO_WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
+            >
+              <FiMessageCircle size={16} /> Agendar por WhatsApp
+            </a>
+            <a
+              href={DEMO_EMAIL}
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-2.5 text-sm font-semibold text-gray-700 dark:text-gray-200 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
+              <FiMail size={16} /> Por correo
+            </a>
+          </div>
+        </aside>
+
         {/* Filtro por tecnología */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrar por tecnología">
